@@ -7,8 +7,8 @@ docker-compose*.yml
 data
 *.db
 testDB
-navidrome
-navidrome.toml
+aetheris
+aetheris.toml
 tmp
 !tmp/taglib
 dist
