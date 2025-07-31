@@ -2,7 +2,7 @@
 .idea
 .vscode
 .envrc
-/navidrome
+/aetheris
 /iTunes*.xml
 /tmp
 /bin
@@ -11,8 +11,8 @@ vendor/*/
 wiki
 TODO.md
 var
-navidrome.toml
-!release/linux/navidrome.toml
+aetheris.toml
+!release/linux/aetheris.toml
 master.zip
 testDB
 cache/*
@@ -24,7 +24,7 @@ music
 docker-compose.yml
 !contrib/docker-compose.yml
 binaries
-navidrome-*
+aetheris-*
 AGENTS.md
 .github/prompts
 .github/instructions
