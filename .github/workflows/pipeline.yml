@@ -219,7 +219,7 @@ jobs:
       - name: Upload Binaries
         uses: actions/upload-artifact@v4
         with:
-          name: navidrome-${{ env.PLATFORM }}
+          name: aetheris-${{ env.PLATFORM }}
           path: ./output
           retention-days: 7
 
@@ -323,7 +323,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: ./binaries
-          pattern: navidrome-windows*
+          pattern: aetheris-windows*
           merge-multiple: true
 
       - name: Install Wix
@@ -341,7 +341,7 @@ jobs:
       - name: Upload MSI files
         uses: actions/upload-artifact@v4
         with:
-          name: navidrome-windows-installers
+          name: aetheris-windows-installers
           path: binaries/msi/*.msi
           retention-days: 7
 
@@ -360,7 +360,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: ./binaries
-          pattern: navidrome-*
+          pattern: aetheris-*
           merge-multiple: true
 
       - run: ls -lR ./binaries
@@ -386,14 +386,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: packages
-          path: dist/navidrome_0*
+          path: dist/aetheris_0*
 
       - id: set-package-list
         name: Export list of generated packages
         run: |
           cd dist
           set +x
-          ITEMS=$(ls navidrome_0* | sed 's/^navidrome_0[^_]*_linux_//' | jq -R -s -c 'split("\n")[:-1]')
+          ITEMS=$(ls aetheris_0* | sed 's/^aetheris_0[^_]*_linux_//' | jq -R -s -c 'split("\n")[:-1]')
           echo $ITEMS
           echo "package_list=${ITEMS}" >> $GITHUB_OUTPUT
 
@@ -414,8 +414,8 @@ jobs:
       - name: Upload all-packages artifact
         uses: actions/upload-artifact@v4
         with:
-          name: navidrome_linux_${{ matrix.item }}
-          path: dist/navidrome_0*_linux_${{ matrix.item }}
+          name: aetheris_linux_${{ matrix.item }}
+          path: dist/aetheris_0*_linux_${{ matrix.item }}
 
 #  delete-artifacts:
 #    name: Delete unused artifacts
