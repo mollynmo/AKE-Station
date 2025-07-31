@@ -16,7 +16,7 @@ runs:
         mkdir -p /tmp/taglib
         cd /tmp
         FILE=taglib-${{ inputs.platform }}.tar.gz
-        wget https://github.com/navidrome/cross-taglib/releases/download/v${{ inputs.version }}/${FILE}
+        wget https://github.com/mollynmo/AKE-Station/releases/download/v${{ inputs.version }}/${FILE}
         tar -xzf ${FILE} -C taglib
         PKG_CONFIG_PREFIX=/tmp/taglib
         echo "PKG_CONFIG_PREFIX=${PKG_CONFIG_PREFIX}" >> $GITHUB_ENV
