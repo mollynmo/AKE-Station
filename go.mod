@@ -1,4 +1,4 @@
-module github.com/navidrome/navidrome
+module github.com/mollynmo/AKE-Station
 
 go 1.24.5
 
